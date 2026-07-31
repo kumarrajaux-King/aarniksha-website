@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.aarniksha.com/sitemap.xml
+Sitemap: https://aarnikshasolutions.com/sitemap.xml
