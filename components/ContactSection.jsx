@@ -38,21 +38,21 @@ export default function ContactSection() {
           <span aria-hidden="true" style={{ flex: "0 0 auto", width: "44px", height: "44px", display: "inline-flex", alignItems: "center", justifyContent: "center", borderRadius: "50%", background: "#E9EFFB", color: "#2F80EC" }}><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2.6" y="4.6" width="14.8" height="10.8" rx="2.2" /><path d="M3.6 6.2l6.4 4.6 6.4-4.6" /></svg></span>
           <div style={{ minWidth: "0" }}>
             <p style={{ margin: "0 0 4px", fontSize: "12px", fontWeight: "800", letterSpacing: ".1em", textTransform: "uppercase", color: "#8A94A6" }}>Email</p>
-            <p style={{ margin: "0", fontSize: "17px", fontWeight: "600", letterSpacing: "-.01em", color: "#101B33" }}>Add email address</p>
+            <p style={{ margin: "0", fontSize: "17px", fontWeight: "600", letterSpacing: "-.01em", color: "#101B33" }}>info@aarnikshasolutions.com</p>
           </div>
         </div>
         <div data-reveal style={{ display: "flex", alignItems: "center", gap: "16px", padding: "20px 0", borderBottom: "1px solid #E9EDF5" }}>
           <span aria-hidden="true" style={{ flex: "0 0 auto", width: "44px", height: "44px", display: "inline-flex", alignItems: "center", justifyContent: "center", borderRadius: "50%", background: "#E9EFFB", color: "#2F80EC" }}><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="5.6" y="2.2" width="8.8" height="15.6" rx="2.4" /><path d="M8.8 15.2h2.4" /></svg></span>
           <div style={{ minWidth: "0" }}>
             <p style={{ margin: "0 0 4px", fontSize: "12px", fontWeight: "800", letterSpacing: ".1em", textTransform: "uppercase", color: "#8A94A6" }}>Phone</p>
-            <p style={{ margin: "0", fontSize: "17px", fontWeight: "600", letterSpacing: "-.01em", color: "#101B33" }}>Add phone number</p>
+            <p style={{ margin: "0", fontSize: "17px", fontWeight: "600", letterSpacing: "-.01em", color: "#101B33" }}>+91 83742 18155</p>
           </div>
         </div>
         <div data-reveal style={{ display: "flex", alignItems: "center", gap: "16px", padding: "20px 0", borderBottom: "1px solid #E9EDF5" }}>
           <span aria-hidden="true" style={{ flex: "0 0 auto", width: "44px", height: "44px", display: "inline-flex", alignItems: "center", justifyContent: "center", borderRadius: "50%", background: "#E9EFFB", color: "#2F80EC" }}><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10 17.4c3.4-4 5.1-6.8 5.1-8.6a5.1 5.1 0 10-10.2 0c0 1.8 1.7 4.6 5.1 8.6z" /><circle cx="10" cy="8.6" r="1.9" /></svg></span>
           <div style={{ minWidth: "0" }}>
             <p style={{ margin: "0 0 4px", fontSize: "12px", fontWeight: "800", letterSpacing: ".1em", textTransform: "uppercase", color: "#8A94A6" }}>Office</p>
-            <p style={{ margin: "0", fontSize: "17px", fontWeight: "600", letterSpacing: "-.01em", color: "#101B33" }}>Add office location</p>
+            <p style={{ margin: "0", fontSize: "17px", fontWeight: "600", letterSpacing: "-.01em", color: "#101B33" }}>Lingampalli, Hyderabad</p>
           </div>
         </div>
         <div data-reveal style={{ display: "flex", alignItems: "center", gap: "16px", padding: "20px 0", borderBottom: "1px solid #E9EDF5" }}>
