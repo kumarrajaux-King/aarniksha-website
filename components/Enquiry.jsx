@@ -36,7 +36,7 @@ function EnquiryModal({ modalOpen, setModalOpen }) {
       if (!res.ok) throw new Error('bad status');
       setSent(true);
     } catch (err) {
-      setError('We could not send that just now. Please email info@aarniksha.com directly.');
+      setError('We could not send that just now. Please email info@aarnikshasolutions.com directly.');
     } finally {
       setBusy(false);
     }

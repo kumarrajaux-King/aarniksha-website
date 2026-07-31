@@ -19,7 +19,7 @@ export default function ContactPage() {
     </div>
   </section>
 
-      <ContactSection />
+      <ContactSection hideHeading />
     </>
   );
 }

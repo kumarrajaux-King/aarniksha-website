@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { ENDPOINT } from '../lib/config';
 
-export default function ContactSection() {
+export default function ContactSection({ hideHeading = false }) {
   const [form, setForm] = useState({ name: '', email: '', company: '', service: 'IT Staffing', message: '' });
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
@@ -21,7 +21,7 @@ export default function ContactSection() {
       if (!res.ok) throw new Error('bad status');
       setSent(true);
     } catch (err) {
-      setError('We could not send that just now. Please email info@aarniksha.com directly.');
+      setError('We could not send that just now. Please email info@aarnikshasolutions.com directly.');
     } finally {
       setBusy(false);
     }
@@ -31,8 +31,8 @@ export default function ContactSection() {
   <section id="contact" style={{ background: "#fff" }}>
     <div style={{ maxWidth: "1240px", margin: "0 auto", padding: "clamp(72px, 9vw, 126px) clamp(20px, 4vw, 40px)", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: "clamp(32px, 4.6vw, 72px)", alignItems: "start" }}>
       <div>
-        <p data-reveal style={{ margin: "0 0 22px", fontSize: "13px", fontWeight: "800", letterSpacing: ".14em", textTransform: "uppercase", color: "#2F80EC" }}>Contact Us</p>
-        <h2 data-reveal style={{ margin: "0 0 20px", maxWidth: "16ch", fontSize: "clamp(34px, 4.7vw, 62px)", lineHeight: "1.04", letterSpacing: "-.028em", fontWeight: "800", color: "#101B33" }}>Let's talk about your next hire</h2>
+        {!hideHeading && (<p data-reveal style={{ margin: "0 0 22px", fontSize: "13px", fontWeight: "800", letterSpacing: ".14em", textTransform: "uppercase", color: "#2F80EC" }}>Contact Us</p>)}
+        {!hideHeading && (<h2 data-reveal style={{ margin: "0 0 20px", maxWidth: "16ch", fontSize: "clamp(34px, 4.7vw, 62px)", lineHeight: "1.04", letterSpacing: "-.028em", fontWeight: "800", color: "#101B33" }}>Let's talk about your next hire</h2>)}
         <p data-reveal style={{ margin: "0 0 clamp(24px, 3vw, 36px)", maxWidth: "46ch", fontSize: "clamp(15px, 1.02vw, 17.5px)", lineHeight: "1.62", color: "#5B6577", textWrap: "pretty" }}>Whether you are building a team or exploring your next role, our consultants respond within one business day.</p>
         <div data-reveal style={{ display: "flex", alignItems: "center", gap: "16px", padding: "20px 0", borderBottom: "1px solid #E9EDF5" }}>
           <span aria-hidden="true" style={{ flex: "0 0 auto", width: "44px", height: "44px", display: "inline-flex", alignItems: "center", justifyContent: "center", borderRadius: "50%", background: "#E9EFFB", color: "#2F80EC" }}><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2.6" y="4.6" width="14.8" height="10.8" rx="2.2" /><path d="M3.6 6.2l6.4 4.6 6.4-4.6" /></svg></span>
