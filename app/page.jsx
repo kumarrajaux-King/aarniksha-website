@@ -6,6 +6,7 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import ProcessSection from '../components/ProcessSection';
 import CtaBand from '../components/CtaBand';
 import IndustriesSection from '../components/IndustriesSection';
+import LeadershipStrip from '../components/LeadershipStrip';
 import JobSeekers from '../components/JobSeekers';
 import Commitment from '../components/Commitment';
 import ContactSection from '../components/ContactSection';
@@ -22,6 +23,7 @@ export default function HomePage() {
       <ProcessSection />
       <CtaBand />
       <IndustriesSection />
+      <LeadershipStrip />
       <JobSeekers />
       <Commitment />
       <ContactSection />
