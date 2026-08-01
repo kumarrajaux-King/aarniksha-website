@@ -3,21 +3,23 @@ import { useState } from 'react';
 import { ENDPOINT } from '../lib/config';
 
 export default function ContactSection({ hideHeading = false }) {
-  const [form, setForm] = useState({ name: '', email: '', company: '', service: 'IT Staffing', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', company: '', service: 'IT Staffing', serviceOther: '', message: '' });
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
   const notSent = !sent;
-  const fName = form.name, fEmail = form.email, fCompany = form.company, fService = form.service, fMessage = form.message;
+  const fName = form.name, fEmail = form.email, fCompany = form.company, fService = form.service, fServiceOther = form.serviceOther, fMessage = form.message;
+  const isOther = form.service === 'Other';
   const onField = (e) => { const { name, value } = e.target; setForm((f) => ({ ...f, [name]: value })); setError(''); };
   const submit = async (e) => {
     e.preventDefault();
     if (!form.name.trim()) return setError('Please enter your name.');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(form.email.trim())) return setError('Please enter a valid email address.');
+    if (form.service === 'Other' && !form.serviceOther.trim()) return setError('Please tell us what you need.');
     if (!form.message.trim()) return setError('Please add a short message.');
     setBusy(true);
     try {
-      const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(form).toString() });
+      const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ ...form, service: form.service === 'Other' ? form.serviceOther.trim() : form.service }).toString() });
       if (!res.ok) throw new Error('bad status');
       setSent(true);
     } catch (err) {
@@ -38,7 +40,7 @@ export default function ContactSection({ hideHeading = false }) {
           <span aria-hidden="true" style={{ flex: "0 0 auto", width: "44px", height: "44px", display: "inline-flex", alignItems: "center", justifyContent: "center", borderRadius: "50%", background: "#E9EFFB", color: "#2F80EC" }}><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2.6" y="4.6" width="14.8" height="10.8" rx="2.2" /><path d="M3.6 6.2l6.4 4.6 6.4-4.6" /></svg></span>
           <div style={{ minWidth: "0" }}>
             <p style={{ margin: "0 0 4px", fontSize: "12px", fontWeight: "800", letterSpacing: ".1em", textTransform: "uppercase", color: "#8A94A6" }}>Email</p>
-            <p style={{ margin: "0", fontSize: "17px", fontWeight: "600", letterSpacing: "-.01em", color: "#101B33" }}>info@aarnikshasolutions.com<br />info@aarnikshasolutions.com<br />hr@aarnikshasolutions.com</p>
+            <p style={{ margin: "0", fontSize: "17px", fontWeight: "600", letterSpacing: "-.01em", color: "#101B33" }}>info@aarnikshasolutions.com<br />hr@aarnikshasolutions.com</p>
           </div>
         </div>
         <div data-reveal style={{ display: "flex", alignItems: "center", gap: "16px", padding: "20px 0", borderBottom: "1px solid #E9EDF5" }}>
@@ -101,7 +103,11 @@ export default function ContactSection({ hideHeading = false }) {
                   <option value="Recruitment Process Outsourcing (RPO)">Recruitment Process Outsourcing (RPO)</option>
                   <option value="Payroll & Compliance Support">Payroll &amp; Compliance Support</option>
                   <option value="HR Consulting">HR Consulting</option>
+                  <option value="Software Development">Software Development</option>
+                  <option value="Corporate Trainings">Corporate Trainings</option>
+                  <option value="Other">Something else &#8212; type your own</option>
                 </select>
+                {isOther && (<input className="x48" type="text" name="serviceOther" value={fServiceOther} onChange={onField} placeholder="Tell us what you need" style={{ width: "100%", marginTop: "10px", fontSize: "15.5px", color: "#101B33", background: "#F8FAFE", border: "1px solid #E1E8F4", borderRadius: "12px", padding: "15px 16px", outline: "none", transition: "border-color .2s ease, background .2s ease" }} />)}
               </label>
             </div>
             <label style={{ display: "grid", gap: "7px" }}>

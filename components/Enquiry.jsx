@@ -18,21 +18,23 @@ export function EnquiryProvider({ children }) {
 
 function EnquiryModal({ modalOpen, setModalOpen }) {
   const closeModal = () => setModalOpen(false);
-  const [form, setForm] = useState({ name: '', email: '', company: '', service: 'IT Staffing', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', company: '', service: 'IT Staffing', serviceOther: '', message: '' });
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
   const notSent = !sent;
-  const fName = form.name, fEmail = form.email, fCompany = form.company, fService = form.service, fMessage = form.message;
+  const fName = form.name, fEmail = form.email, fCompany = form.company, fService = form.service, fServiceOther = form.serviceOther, fMessage = form.message;
+  const isOther = form.service === 'Other';
   const onField = (e) => { const { name, value } = e.target; setForm((f) => ({ ...f, [name]: value })); setError(''); };
   const submit = async (e) => {
     e.preventDefault();
     if (!form.name.trim()) return setError('Please enter your name.');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(form.email.trim())) return setError('Please enter a valid email address.');
+    if (form.service === 'Other' && !form.serviceOther.trim()) return setError('Please tell us what you need.');
     if (!form.message.trim()) return setError('Please add a short message.');
     setBusy(true);
     try {
-      const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(form).toString() });
+      const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ ...form, service: form.service === 'Other' ? form.serviceOther.trim() : form.service }).toString() });
       if (!res.ok) throw new Error('bad status');
       setSent(true);
     } catch (err) {
@@ -95,7 +97,11 @@ function EnquiryModal({ modalOpen, setModalOpen }) {
                   <option value="Recruitment Process Outsourcing (RPO)">Recruitment Process Outsourcing (RPO)</option>
                   <option value="Payroll & Compliance Support">Payroll &amp; Compliance Support</option>
                   <option value="HR Consulting">HR Consulting</option>
+                  <option value="Software Development">Software Development</option>
+                  <option value="Corporate Trainings">Corporate Trainings</option>
+                  <option value="Other">Something else &#8212; type your own</option>
                 </select>
+                {isOther && (<input className="x70" type="text" name="serviceOther" value={fServiceOther} onChange={onField} placeholder="Tell us what you need" style={{ width: "100%", marginTop: "10px", fontSize: "15.5px", color: "#101B33", background: "#F8FAFE", border: "1px solid #E1E8F4", borderRadius: "12px", padding: "15px 16px", outline: "none", transition: "border-color .2s ease, background .2s ease" }} />)}
               </label>
             </div>
             <label style={{ display: "grid", gap: "7px" }}>
