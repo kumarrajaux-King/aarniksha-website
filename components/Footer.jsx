@@ -35,7 +35,7 @@ export default function Footer() {
         <div>
           <p style={{ margin: "0 0 20px", fontSize: "12px", fontWeight: "800", letterSpacing: ".12em", textTransform: "uppercase", color: "#2F80EC" }}>Connect / Socials</p>
           <div style={{ display: "flex", flexDirection: "column", gap: "13px" }}>
-            <a className="x61" href="#top" style={{ fontSize: "15.5px", color: "#43506A" }}>LinkedIn</a>
+            <a className="x61" href="https://www.linkedin.com/company/aarniksha-solutions" target="_blank" rel="noopener noreferrer" style={{ fontSize: "15.5px", color: "#43506A" }}>LinkedIn</a>
             <a className="x62" href="#top" style={{ fontSize: "15.5px", color: "#43506A" }}>Instagram</a>
           </div>
         </div>
