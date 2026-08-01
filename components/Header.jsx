@@ -32,7 +32,7 @@ export default function Header() {
         <a className="x4" href="/industries" style={{ color: "#fff", fontSize: "16px", fontWeight: "600", letterSpacing: "-.01em", padding: "6px 0", borderBottom: "2px solid transparent", opacity: on("/industries") ? "1" : ".72", borderBottomColor: on("/industries") ? "#6FA8F5" : "transparent" }}>Industries</a>
         <a className="x5" href="/insights" style={{ color: "#fff", fontSize: "16px", fontWeight: "600", letterSpacing: "-.01em", padding: "6px 0", borderBottom: "2px solid transparent", opacity: on("/insights") ? "1" : ".72", borderBottomColor: on("/insights") ? "#6FA8F5" : "transparent" }}>Insights</a>
         <a className="x6" href="/careers" style={{ color: "#fff", fontSize: "16px", fontWeight: "600", letterSpacing: "-.01em", padding: "6px 0", borderBottom: "2px solid transparent", opacity: on("/careers") ? "1" : ".72", borderBottomColor: on("/careers") ? "#6FA8F5" : "transparent" }}>Careers</a>
-        <a className="x7" href="/contact" style={{ color: "#fff", fontSize: "16px", fontWeight: "600", letterSpacing: "-.01em", padding: "6px 0", borderBottom: "2px solid transparent", opacity: on("/contact") ? "1" : ".72", borderBottomColor: on("/contact") ? "#6FA8F5" : "transparent" }}>Contact</a>
+        <a className="x7" href="/leadership" style={{ color: "#fff", fontSize: "16px", fontWeight: "600", letterSpacing: "-.01em", padding: "6px 0", borderBottom: "2px solid transparent", opacity: on("/leadership") ? "1" : ".72", borderBottomColor: on("/leadership") ? "#6FA8F5" : "transparent" }}>Leadership</a>
       </nav>
 
       <div style={{ display: "flex", alignItems: "center", gap: "12px", flex: "0 0 auto" }}>
@@ -49,7 +49,7 @@ export default function Header() {
       <a href="/industries" onClick={closeMenu} style={{ display: "block", color: "#fff", fontSize: "17px", fontWeight: "600", padding: "15px 0", borderBottom: "1px solid rgba(255,255,255,.1)" }}>Industries</a>
       <a href="/insights" onClick={closeMenu} style={{ display: "block", color: "#fff", fontSize: "17px", fontWeight: "600", padding: "15px 0", borderBottom: "1px solid rgba(255,255,255,.1)" }}>Insights</a>
       <a href="/careers" onClick={closeMenu} style={{ display: "block", color: "#fff", fontSize: "17px", fontWeight: "600", padding: "15px 0", borderBottom: "1px solid rgba(255,255,255,.1)" }}>Careers</a>
-      <a href="/contact" onClick={closeMenu} style={{ display: "block", color: "#fff", fontSize: "17px", fontWeight: "600", padding: "15px 0" }}>Contact</a>
+      <a href="/leadership" onClick={closeMenu} style={{ display: "block", color: "#fff", fontSize: "17px", fontWeight: "600", padding: "15px 0" }}>Leadership</a>
     </div>
   </header>
   );
