@@ -4,7 +4,7 @@
  * Receives POSTs from the site forms and emails them to $TO.
  * Change $TO to the inbox that should receive enquiries.
  */
-$TO      = 'info@aarnikshasolutions.com';
+$TO      = 'info@aarnikshasolutions.com, hr@aarnikshasolutions.com';
 $SUBJECT = 'New website enquiry';
 
 header('Content-Type: application/json; charset=utf-8');
