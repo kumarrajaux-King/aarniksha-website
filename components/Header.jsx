@@ -1,13 +1,11 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { useEnquiry } from './Enquiry';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const { openEnquiry } = useEnquiry();
   const on = (href) => href === '/' ? pathname === '/' : pathname.startsWith(href);
   const toggleMenu = () => setMenuOpen((v) => !v);
   const closeMenu = () => setMenuOpen(false);
@@ -38,7 +36,7 @@ export default function Header() {
       </nav>
 
       <div style={{ display: "flex", alignItems: "center", gap: "12px", flex: "0 0 auto" }}>
-        <button className="x8" type="button" onClick={openEnquiry} style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "transparent", color: "#fff", fontSize: "15px", fontWeight: "700", border: "1px solid rgba(255,255,255,.38)", borderRadius: "999px", padding: "13px 24px", cursor: "pointer", transition: "background .25s ease, border-color .25s ease, transform .25s ease" }}>Contact Us <span style={{ fontSize: "13px" }}>&#8599;</span></button>
+        <a className="x8" href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "transparent", color: "#fff", fontSize: "15px", fontWeight: "700", border: "1px solid rgba(255,255,255,.38)", borderRadius: "999px", padding: "13px 24px", cursor: "pointer", transition: "background .25s ease, border-color .25s ease, transform .25s ease" }}>Contact Us <span style={{ fontSize: "13px" }}>&#8599;</span></a>
         <button className="ak-burger" type="button" onClick={toggleMenu} aria-label="Open menu" style={{ display: "none", width: "46px", height: "46px", alignItems: "center", justifyContent: "center", background: "rgba(255,255,255,.1)", border: "1px solid rgba(255,255,255,.24)", borderRadius: "12px", cursor: "pointer", padding: "0" }}>
           <span style={{ display: "block", width: "20px", height: "10px", borderTop: "2px solid #fff", borderBottom: "2px solid #fff" }}></span>
         </button>
