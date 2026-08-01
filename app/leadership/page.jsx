@@ -8,24 +8,28 @@ export const metadata = {
 export default function LeadershipPage() {
   return (
     <>
-  <section style={{ position: "relative", background: "radial-gradient(120% 120% at 12% 0%, #0A4497 0%, #06367E 46%, #04255A 100%)", overflow: "hidden" }}>
-    <div aria-hidden="true" style={{ position: "absolute", top: "-58%", right: "-12%", width: "54vw", height: "54vw", borderRadius: "50%", border: "1px solid rgba(255,255,255,.08)", pointerEvents: "none" }}></div>
-    <div aria-hidden="true" style={{ position: "absolute", bottom: "-46%", left: "-14%", width: "42vw", height: "42vw", borderRadius: "50%", border: "1px solid rgba(255,255,255,.06)", pointerEvents: "none" }}></div>
-    <div style={{ position: "relative", maxWidth: "1240px", margin: "0 auto", padding: "clamp(84px, 10vw, 152px) clamp(20px, 4vw, 40px) clamp(88px, 11vw, 164px)" }}>
-      <p data-reveal style={{ margin: "0 0 20px", fontSize: "12.5px", fontWeight: "800", letterSpacing: ".14em", textTransform: "uppercase", color: "#7EAEF6" }}>Leadership</p>
-      <h1 data-reveal style={{ margin: "0 0 26px", maxWidth: "18ch", fontSize: "clamp(38px, 5.6vw, 78px)", lineHeight: "1", letterSpacing: "-.035em", fontWeight: "800", color: "#fff" }}>Leading with Vision. Delivering with Integrity.</h1>
-      <p data-reveal style={{ margin: "0", maxWidth: "62ch", fontSize: "clamp(15px, 1.05vw, 18.5px)", lineHeight: "1.66", color: "rgba(255,255,255,.8)", textWrap: "pretty" }}>At Aarniksha Solutions, our leadership is driven by a commitment to innovation, integrity, and excellence. Guided by Directors Arjun Laknepally and Sneha Rampalli, we are focused on delivering trusted solutions, building lasting client relationships, and creating sustainable value through professionalism, transparency, and customer-centric service.</p>
+  <section style={{ position: "relative", background: "linear-gradient(180deg, #EDF5FF 0%, #F4FAFF 52%, #E7F1FD 100%)", overflow: "hidden" }}>
+    <div aria-hidden="true" style={{ position: "absolute", top: "-30%", left: "-10%", width: "44vw", height: "44vw", borderRadius: "50%", background: "radial-gradient(circle at 45% 45%, rgba(47,128,236,.10), rgba(47,128,236,0) 68%)", pointerEvents: "none" }}></div>
+    <div style={{ position: "relative", maxWidth: "1240px", margin: "0 auto", padding: "clamp(52px, 6vw, 96px) clamp(20px, 4vw, 40px) clamp(56px, 6.6vw, 104px)", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "clamp(24px, 3vw, 48px)" }}>
+      <div style={{ flex: "1 1 400px", minWidth: "0" }}>
+        <p data-reveal style={{ margin: "0 0 20px", fontSize: "12.5px", fontWeight: "800", letterSpacing: ".14em", textTransform: "uppercase", color: "#2F80EC" }}>Leadership</p>
+        <h1 data-reveal style={{ margin: "0 0 24px", maxWidth: "15ch", fontSize: "clamp(38px, 5vw, 68px)", lineHeight: "1.02", letterSpacing: "-.035em", fontWeight: "800", color: "#0B2A5B" }}>Leading with Vision. Delivering with Integrity.</h1>
+        <p data-reveal style={{ margin: "0", maxWidth: "50ch", fontSize: "clamp(15px, 1.02vw, 17.5px)", lineHeight: "1.68", color: "#4A5670", textWrap: "pretty" }}>At Aarniksha Solutions, our leadership is driven by a commitment to innovation, integrity, and excellence. Guided by Directors Arjun Laknepally and Sneha Rampalli, we deliver trusted solutions, build lasting client relationships, and create sustainable value.</p>
+      </div>
+      <div data-reveal style={{ flex: "1 1 480px", minWidth: "0", marginRight: "clamp(-40px, -4vw, -20px)", WebkitMaskImage: "linear-gradient(90deg, transparent 0%, rgba(0,0,0,.55) 5%, #000 16%), linear-gradient(180deg, transparent 0%, #000 11%, #000 84%, transparent 100%)", maskImage: "linear-gradient(90deg, transparent 0%, rgba(0,0,0,.55) 5%, #000 16%), linear-gradient(180deg, transparent 0%, #000 11%, #000 84%, transparent 100%)", WebkitMaskComposite: "source-in", maskComposite: "intersect" }}>
+        <img src="/assets/leadership-hero.png" alt="Business leaders flying on paper planes toward a flag" style={{ display: "block", width: "100%", height: "auto" }} />
+      </div>
     </div>
   </section>
 
-  <section style={{ position: "relative", background: "#E9EFFB", overflow: "hidden" }}>
-    <div aria-hidden="true" style={{ position: "absolute", top: "-40%", right: "-8%", width: "44vw", height: "44vw", borderRadius: "50%", background: "radial-gradient(circle at 40% 40%, rgba(47,128,236,.14), rgba(47,128,236,0) 70%)", pointerEvents: "none" }}></div>
-    <div style={{ position: "relative", maxWidth: "1240px", margin: "0 auto", padding: "clamp(64px, 8vw, 108px) clamp(20px, 4vw, 40px)", display: "flex", flexWrap: "wrap", gap: "clamp(28px, 4.5vw, 72px)", alignItems: "flex-start" }}>
-      <div style={{ flex: "0 1 340px", minWidth: "0" }}>
-        <p data-reveal style={{ margin: "0 0 18px", fontSize: "13px", fontWeight: "800", letterSpacing: ".14em", textTransform: "uppercase", color: "#2F80EC" }}>Our Shared Vision</p>
-        <div data-reveal style={{ width: "56px", height: "4px", borderRadius: "2px", background: "#2F80EC" }}></div>
+  <section style={{ position: "relative", background: "#06367E", overflow: "hidden" }}>
+    <div aria-hidden="true" style={{ position: "absolute", top: "-52%", right: "-10%", width: "46vw", height: "46vw", borderRadius: "50%", border: "1px solid rgba(255,255,255,.07)", pointerEvents: "none" }}></div>
+    <div style={{ position: "relative", maxWidth: "1240px", margin: "0 auto", padding: "clamp(64px, 8vw, 112px) clamp(20px, 4vw, 40px)", display: "flex", flexWrap: "wrap", gap: "clamp(28px, 4.5vw, 72px)", alignItems: "flex-start" }}>
+      <div style={{ flex: "0 1 320px", minWidth: "0" }}>
+        <p data-reveal style={{ margin: "0 0 18px", fontSize: "13px", fontWeight: "800", letterSpacing: ".14em", textTransform: "uppercase", color: "#7EAEF6" }}>Our Shared Vision</p>
+        <div data-reveal style={{ width: "56px", height: "4px", borderRadius: "2px", background: "#6FA8F5" }}></div>
       </div>
-      <p data-reveal style={{ flex: "1 1 460px", minWidth: "0", margin: "0", fontSize: "clamp(19px, 1.9vw, 28px)", lineHeight: "1.5", letterSpacing: "-.015em", fontWeight: "500", color: "#101B33", textWrap: "pretty" }}>Together, Arjun Laknepally and Sneha Rampalli are leading Aarniksha Solutions with a common purpose &#8212; to build a company recognized for its integrity, innovation, and commitment to excellence. Their goal is to create meaningful partnerships, deliver reliable solutions, and contribute to the success of every client they serve.</p>
+      <p data-reveal style={{ flex: "1 1 460px", minWidth: "0", margin: "0", fontSize: "clamp(19px, 1.9vw, 28px)", lineHeight: "1.5", letterSpacing: "-.015em", fontWeight: "500", color: "#fff", textWrap: "pretty" }}>Together, Arjun Laknepally and Sneha Rampalli are leading Aarniksha Solutions with a common purpose &#8212; to build a company recognized for its integrity, innovation, and commitment to excellence. Their goal is to create meaningful partnerships, deliver reliable solutions, and contribute to the success of every client they serve.</p>
     </div>
   </section>
 
