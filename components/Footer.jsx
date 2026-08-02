@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useEnquiry } from './Enquiry';
 
 export default function Footer() {
@@ -16,12 +16,13 @@ export default function Footer() {
         <div>
           <p style={{ margin: "0 0 20px", fontSize: "12px", fontWeight: "800", letterSpacing: ".12em", textTransform: "uppercase", color: "#2F80EC" }}>Company</p>
           <div style={{ display: "flex", flexDirection: "column", gap: "13px" }}>
-            <a className="x52" href="/about" style={{ fontSize: "15.5px", color: "#43506A" }}>About Us</a>
-            <a className="x53" href="/industries" style={{ fontSize: "15.5px", color: "#43506A" }}>Industries</a>
-            <a className="x54" href="/insights" style={{ fontSize: "15.5px", color: "#43506A" }}>How We Work</a>
-            <a className="x55" href="/services" style={{ fontSize: "15.5px", color: "#43506A" }}>Training Partnership</a>
+            <a className="x52" href="/" style={{ fontSize: "15.5px", color: "#43506A" }}>Home</a>
+            <a className="x53" href="/about" style={{ fontSize: "15.5px", color: "#43506A" }}>About Us</a>
+            <a className="x54" href="/services" style={{ fontSize: "15.5px", color: "#43506A" }}>Services</a>
+            <a className="x55" href="/industries" style={{ fontSize: "15.5px", color: "#43506A" }}>Industries</a>
             <a className="x56" href="/insights" style={{ fontSize: "15.5px", color: "#43506A" }}>Insights</a>
             <a className="x57" href="/careers" style={{ fontSize: "15.5px", color: "#43506A" }}>Careers</a>
+            <a className="x66" href="/leadership" style={{ fontSize: "15.5px", color: "#43506A" }}>Leadership</a>
           </div>
         </div>
         <div>
@@ -55,3 +56,4 @@ export default function Footer() {
   </footer>
   );
 }
+

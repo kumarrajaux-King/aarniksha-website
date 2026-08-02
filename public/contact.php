@@ -1,11 +1,11 @@
-<?php
+﻿<?php
 /**
  * Aarniksha Solutions - contact + enquiry form handler.
- * Receives POSTs from the site forms and emails them to $TO.
- * Change $TO to the inbox that should receive enquiries.
+ * General enquiries go to $TO_ENQUIRY; job applications go to $TO_JOBS.
+ * Forms flag applications by posting kind=job.
  */
-$TO      = 'info@aarnikshasolutions.com, hr@aarnikshasolutions.com';
-$SUBJECT = 'New website enquiry';
+$TO_ENQUIRY = 'info@aarnikshasolutions.com';
+$TO_JOBS    = 'hr@aarnikshasolutions.com';
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -22,6 +22,12 @@ $email   = field('email');
 $company = field('company');
 $service = field('service');
 $message = field('message');
+$kind    = field('kind');
+$role    = field('role');
+
+$isJob   = ($kind === 'job');
+$TO      = $isJob ? $TO_JOBS : $TO_ENQUIRY;
+$SUBJECT = $isJob ? ('Job application' . ($role !== '' ? ' — ' . $role : '')) : 'New website enquiry';
 
 if ($name === '' || $message === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
   http_response_code(422);
@@ -29,11 +35,11 @@ if ($name === '' || $message === '' || !filter_var($email, FILTER_VALIDATE_EMAIL
   exit;
 }
 
-$body = "New enquiry from the website\n\n"
+$body = ($isJob ? "New job application from the website\n\n" : "New enquiry from the website\n\n")
       . "Name:    $name\n"
       . "Email:   $email\n"
       . "Company: $company\n"
-      . "Service: $service\n\n"
+      . ($isJob ? "Role:    $role\n\n" : "Service: $service\n\n")
       . "Message:\n$message\n";
 
 $headers  = "From: Aarniksha Website <no-reply@" . preg_replace('/^www\./', '', $_SERVER['HTTP_HOST']) . ">\r\n";

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState } from 'react';
 import { ENDPOINT } from '../lib/config';
 
@@ -23,7 +23,7 @@ export default function ContactSection({ hideHeading = false }) {
       if (!res.ok) throw new Error('bad status');
       setSent(true);
     } catch (err) {
-      setError('We could not send that just now. Please email hr@aarnikshasolutions.com directly.');
+      setError('We could not send that just now. Please email info@aarnikshasolutions.com directly.');
     } finally {
       setBusy(false);
     }
@@ -40,7 +40,8 @@ export default function ContactSection({ hideHeading = false }) {
           <span aria-hidden="true" style={{ flex: "0 0 auto", width: "44px", height: "44px", display: "inline-flex", alignItems: "center", justifyContent: "center", borderRadius: "50%", background: "#E9EFFB", color: "#2F80EC" }}><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2.6" y="4.6" width="14.8" height="10.8" rx="2.2" /><path d="M3.6 6.2l6.4 4.6 6.4-4.6" /></svg></span>
           <div style={{ minWidth: "0" }}>
             <p style={{ margin: "0 0 4px", fontSize: "12px", fontWeight: "800", letterSpacing: ".1em", textTransform: "uppercase", color: "#8A94A6" }}>Email</p>
-            <p style={{ margin: "0", fontSize: "17px", fontWeight: "600", letterSpacing: "-.01em", color: "#101B33" }}>info@aarnikshasolutions.com<br />hr@aarnikshasolutions.com</p>
+            <p style={{ margin: "0", fontSize: "17px", fontWeight: "600", letterSpacing: "-.01em", color: "#101B33" }}>info@aarnikshasolutions.com</p>
+            <p style={{ margin: "2px 0 0", fontSize: "14px", fontWeight: "600", color: "#8A94A6" }}>Careers &amp; applications — hr@aarnikshasolutions.com</p>
           </div>
         </div>
         <div data-reveal style={{ display: "flex", alignItems: "center", gap: "16px", padding: "20px 0", borderBottom: "1px solid #E9EDF5" }}>
@@ -123,3 +124,4 @@ export default function ContactSection({ hideHeading = false }) {
   </section>
   );
 }
+

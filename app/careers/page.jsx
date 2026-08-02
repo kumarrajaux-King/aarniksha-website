@@ -1,9 +1,10 @@
+﻿import OpenRoles from '../../components/OpenRoles';
 import JobSeekers from '../../components/JobSeekers';
 import CtaBand from '../../components/CtaBand';
 
 export const metadata = {
   title: "Careers | Aarniksha Solutions",
-  description: "For employers building teams and job seekers planning their next move — our consultants work with you at every stage."
+  description: "For employers building teams and job seekers planning their next move â€” our consultants work with you at every stage."
 };
 
 export default function CareersPage() {
@@ -20,8 +21,10 @@ export default function CareersPage() {
     </div>
   </section>
 
+      <OpenRoles />
       <JobSeekers />
       <CtaBand />
     </>
   );
 }
+
