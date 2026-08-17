@@ -41,7 +41,7 @@ export default function ContactSection({ hideHeading = false }) {
           <div style={{ minWidth: "0" }}>
             <p style={{ margin: "0 0 4px", fontSize: "12px", fontWeight: "800", letterSpacing: ".1em", textTransform: "uppercase", color: "#8A94A6" }}>Email</p>
             <p style={{ margin: "0", fontSize: "17px", fontWeight: "600", letterSpacing: "-.01em", color: "#101B33" }}>info@aarnikshasolutions.com</p>
-            <p style={{ margin: "2px 0 0", fontSize: "14px", fontWeight: "600", color: "#8A94A6" }}>Careers &amp; applications — hr@aarnikshasolutions.com</p>
+            <p style={{ margin: "2px 0 0", fontSize: "14px", fontWeight: "600", color: "#8A94A6" }}>Careers &amp; applications â€” hr@aarnikshasolutions.com</p>
           </div>
         </div>
         <div data-reveal style={{ display: "flex", alignItems: "center", gap: "16px", padding: "20px 0", borderBottom: "1px solid #E9EDF5" }}>
