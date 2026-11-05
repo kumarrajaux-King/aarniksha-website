@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Employee Portal (Demo) — Aarniksha Solutions</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="assets/ds/styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="assets/ds/_ds_bundle.js"></script>
+<script src="portal/email-templates.js"></script>
+<script src="portal/store.js"></script>
+<style>body{margin:0;background:#F8FAFE}a{color:#2F80EC}a:hover{color:#06367E}input[type=date],input[type=time]{min-height:20px}</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="portal/ui.jsx"></script>
+<script type="text/babel" src="portal/shell.jsx"></script>
+<script type="text/babel" src="portal/auth.jsx"></script>
+<script type="text/babel" src="portal/employee.jsx"></script>
+<script type="text/babel" src="portal/work.jsx"></script>
+<script type="text/babel" src="portal/admin.jsx"></script>
+<script type="text/babel">
+const PAGES = {
+  home: (go) => <HomePage go={go} />, attendance: () => <AttendancePage />, leave: () => <LeavePage />, tasks: () => <TasksPage />,
+  performance: () => <PerformancePage />, holidays: () => <HolidaysPage />, team: () => <TeamPage />,
+  admin: (go) => <AdminOverview go={go} />, 'admin-employees': () => <EmployeesPage />, 'admin-approvals': () => <ApprovalsPage />,
+  'admin-holidays': () => <AdminHolidays />, 'admin-outbox': () => <OutboxPage />, 'admin-roles': () => <RolesPage />,
+};
+const VIEW_KEY = 'ak-portal-view';
+const ROUTE_KEY = 'ak-portal-route';
+
+function ProtoBar({ view, setView }) {
+  return (
+    <div style={{ position: 'fixed', right: '16px', bottom: '16px', zIndex: 200, display: 'flex', alignItems: 'center', gap: '8px', padding: '6px', borderRadius: '999px', background: '#101B33', boxShadow: '0 12px 30px rgba(2,22,56,.3)' }}>
+      <span style={{ padding: '0 6px 0 10px', fontSize: '10.5px', fontWeight: 800, letterSpacing: '.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,.6)' }}>Demo</span>
+      {[['desktop', 'Desktop', 'Monitor'], ['mobile', 'Mobile', 'Smartphone']].map(([k, l, ic]) => (
+        <button key={k} type="button" onClick={() => setView(k)} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '7px 12px', borderRadius: '999px', border: 'none', cursor: 'pointer', fontFamily: 'inherit', fontSize: '12.5px', fontWeight: 700, background: view === k ? '#fff' : 'transparent', color: view === k ? '#06367E' : 'rgba(255,255,255,.8)' }}><PIcon name={ic} size={14} />{l}</button>
+      ))}
+      <button type="button" title="Reset demo data" onClick={() => { if (confirm('Reset all demo data to the starting state?')) { AKStore.act.reset(); } }} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '7px 12px', borderRadius: '999px', border: '1px solid rgba(255,255,255,.2)', cursor: 'pointer', fontFamily: 'inherit', fontSize: '12.5px', fontWeight: 700, background: 'transparent', color: 'rgba(255,255,255,.8)' }}><PIcon name="RotateCcw" size={14} />Reset</button>
+    </div>
+  );
+}
+
+function Toasts({ list }) {
+  return (
+    <div style={{ position: 'fixed', left: '50%', bottom: '24px', transform: 'translateX(-50%)', zIndex: 150, display: 'grid', gap: '8px', width: 'max-content', maxWidth: 'calc(100% - 32px)' }}>
+      {list.map((t) => (
+        <div key={t.id} role="status" style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 18px', borderRadius: '999px', background: '#06367E', color: '#fff', fontSize: '14px', fontWeight: 600, boxShadow: '0 14px 30px rgba(2,22,56,.3)', animation: 'ak-pop .28s cubic-bezier(.2,.7,.3,1) both' }}>
+          <span style={{ color: '#9CC6FA', display: 'inline-flex' }}><PIcon name="CircleCheck" size={17} /></span>{t.msg}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function App() {
+  const S = useStore();
+  const [view, setViewS] = React.useState(() => localStorage.getItem(VIEW_KEY) || 'desktop');
+  const [route, setRoute] = React.useState(() => localStorage.getItem(ROUTE_KEY) || 'home');
+  const [toasts, setToasts] = React.useState([]);
+  const setView = (v) => { setViewS(v); localStorage.setItem(VIEW_KEY, v); };
+  const go = (r) => { setRoute(r); localStorage.setItem(ROUTE_KEY, r); };
+  const toast = (msg) => { const id = Date.now() + Math.random(); setToasts((l) => [...l, { id, msg }]); setTimeout(() => setToasts((l) => l.filter((t) => t.id !== id)), 3200); };
+  const me = S.session ? S.users.find((u) => u.id === S.session.userId) : null;
+  React.useEffect(() => { if (S.session && (!me || me.status !== 'active')) AKStore.act.signOut(); }, [S.session, me && me.status]);
+  React.useEffect(() => { if (me && !routeAllowed(route, me.role)) go('home'); }, [me && me.role, route]);
+  React.useEffect(() => { if (!S.session) go('home'); }, [S.session]);
+  const m = view === 'mobile';
+  const active = me && me.status === 'active';
+  const ctx = { me, m, toast, go };
+  const inner = (
+    <AppCtx.Provider value={ctx}>
+      {active ? <AppShell route={route} go={go}>{(PAGES[route] || PAGES.home)(go)}</AppShell> : <AuthScreen />}
+      <Toasts list={toasts} />
+    </AppCtx.Provider>
+  );
+  return (
+    <>
+      {m ? (
+        <div style={{ minHeight: '100vh', background: '#E9EFFB', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '32px 16px 80px', boxSizing: 'border-box' }}>
+          <div data-screen-label="Mobile" style={{ position: 'relative', width: '390px', height: '844px', maxHeight: 'calc(100vh - 112px)', minHeight: '640px', borderRadius: '44px', border: '10px solid #101B33', background: '#F8FAFE', overflow: 'hidden', boxShadow: '0 40px 90px rgba(2,22,56,.28)', transform: 'translateZ(0)' }}>
+            <div style={{ position: 'absolute', inset: 0 }}>{inner}</div>
+          </div>
+        </div>
+      ) : <div data-screen-label="Desktop">{inner}</div>}
+      <ProtoBar view={view} setView={setView} />
+    </>
+  );
+}
+
+const mount = () => {
+  const need = ['AppShell', 'AuthScreen', 'HomePage', 'TasksPage', 'AdminOverview'];
+  if (!need.every((k) => window[k])) return setTimeout(mount, 40);
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+};
+mount();
+</script>
+</body>
+</html>

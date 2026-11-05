@@ -1,0 +1,51 @@
+:root{
+/* ── Brand navy ─────────────────────────────────────────── */
+--ak-navy-900:#04142F;--ak-navy-850:#041A42;--ak-navy-800:#04255A;--ak-navy-750:#071A3C;
+--ak-navy-700:#06367E;--ak-navy-600:#0A4497;--ak-navy-550:#123A86;--ak-navy-teal:#0B4A78;
+/* ── Brand blue ─────────────────────────────────────────── */
+--ak-blue-600:#1D6AE3;--ak-blue-550:#1E6FDC;--ak-blue-500:#2F80EC;
+--ak-blue-400:#6FA8F5;--ak-blue-350:#7EAEF6;--ak-blue-300:#9CC6FA;--ak-blue-200:#C3D3EE;
+/* ── Tints & surfaces ───────────────────────────────────── */
+--ak-white:#FFFFFF;--ak-tint-050:#F8FAFE;--ak-tint-100:#E9EFFB;
+--ak-sky-050:#F4FAFF;--ak-sky-100:#EDF5FF;--ak-sky-150:#E7F1FD;
+/* ── Neutrals ───────────────────────────────────────────── */
+--ak-ink-900:#101B33;--ak-ink-700:#43506A;--ak-ink-600:#4A5670;--ak-ink-500:#5B6577;
+--ak-ink-450:#6B7688;--ak-ink-400:#7A859A;--ak-ink-350:#8A94A6;
+/* ── Hairlines ──────────────────────────────────────────── */
+--ak-line-100:#EDF1F8;--ak-line-150:#E9EDF5;--ak-line-200:#E5EAF3;--ak-line-250:#E3EAF6;
+--ak-line-300:#E1E8F4;--ak-line-350:#DDE6F6;--ak-line-400:#DCE5F5;--ak-line-450:#DCE3EE;
+--ak-line-500:#C9D8F2;--ak-line-blue:#CFDFF9;
+/* ── Semantic ───────────────────────────────────────────── */
+--ak-danger:#D4453B;
+
+/* ── Aliases: text ──────────────────────────────────────── */
+--text-primary:var(--ak-ink-900);--text-heading:var(--ak-ink-900);--text-body:var(--ak-ink-500);
+--text-muted:var(--ak-ink-450);--text-meta:var(--ak-ink-400);--text-caption:var(--ak-ink-350);
+--text-link:var(--ak-ink-700);--text-accent:var(--ak-blue-500);--text-deep:var(--ak-navy-700);
+--text-on-navy:rgba(255,255,255,.86);--text-on-navy-soft:rgba(255,255,255,.72);
+--text-on-blue:rgba(255,255,255,.94);--text-eyebrow-on-navy:var(--ak-blue-350);
+--text-inverse:var(--ak-white);--text-error:var(--ak-danger);
+/* ── Aliases: surface ───────────────────────────────────── */
+--surface-page:var(--ak-white);--surface-card:var(--ak-white);--surface-tint:var(--ak-tint-050);
+--surface-band:var(--ak-tint-100);--surface-navy:var(--ak-navy-700);--surface-blue:var(--ak-blue-500);
+--surface-blue-deep:var(--ak-blue-600);--surface-field:var(--ak-tint-050);
+--surface-glass-on-blue:rgba(255,255,255,.11);--surface-scrim:rgba(6,25,58,.55);
+/* ── Aliases: border ────────────────────────────────────── */
+--border-hairline:var(--ak-line-150);--border-card:var(--ak-line-250);--border-field:var(--ak-line-300);
+--border-chip:var(--ak-line-400);--border-button:var(--ak-line-450);--border-pill:var(--ak-line-500);
+--border-on-navy:rgba(255,255,255,.16);--border-on-blue:rgba(255,255,255,.2);
+/* ── Aliases: interactive ───────────────────────────────── */
+--action-primary:var(--ak-blue-500);--action-primary-hover:var(--ak-navy-700);
+--action-primary-hero-hover:var(--ak-blue-550);--action-on-color:var(--ak-white);
+--focus-ring:var(--ak-blue-500);--link:var(--ak-blue-500);--link-hover:var(--ak-navy-700);
+--nav-underline:var(--ak-blue-400);
+/* ── Gradients seen in the site ─────────────────────────── */
+--gradient-hero:radial-gradient(120% 80% at 50% 0%,#FFFFFF 0%,#FBFCFE 38%,#F3F6FC 72%,#EDF2FA 100%); /* @kind color */
+--gradient-leadership:linear-gradient(140deg,#04255A 0%,#06367E 52%,#0A4497 100%); /* @kind color */
+--gradient-page-light:linear-gradient(180deg,#EDF5FF 0%,#F4FAFF 52%,#E7F1FD 100%); /* @kind color */
+--gradient-progress:linear-gradient(90deg,#2F80EC,#6FA8F5); /* @kind color */
+--gradient-portrait-scrim:linear-gradient(180deg,rgba(6,54,126,0) 42%,rgba(4,26,66,.9) 100%); /* @kind color */
+--gradient-hero-scrim:linear-gradient(90deg,#06367E 0%,rgba(6,54,126,.92) 26%,rgba(6,54,126,.55) 56%,rgba(6,54,126,.1) 100%); /* @kind color */
+/* ── Blueprint hatch used behind service-card icons ─────── */
+--pattern-blueprint:repeating-linear-gradient(60deg,rgba(255,255,255,.09) 0 1px,transparent 1px 24px),repeating-linear-gradient(-60deg,rgba(255,255,255,.09) 0 1px,transparent 1px 24px),repeating-linear-gradient(0deg,rgba(255,255,255,.07) 0 1px,transparent 1px 24px); /* @kind color */
+}

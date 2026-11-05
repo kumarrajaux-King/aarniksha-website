@@ -1,0 +1,43 @@
+:root{
+/* 8pt-derived scale; the site also uses half-steps (7/9/13/22/26/34) — kept verbatim */
+--space-0:0; /* @kind spacing */
+--space-1:4px; /* @kind spacing */
+--space-2:7px; /* @kind spacing */
+--space-3:9px; /* @kind spacing */
+--space-4:10px; /* @kind spacing */
+--space-5:12px; /* @kind spacing */
+--space-6:13px; /* @kind spacing */
+--space-7:14px; /* @kind spacing */
+--space-8:16px; /* @kind spacing */
+--space-9:18px; /* @kind spacing */
+--space-10:20px; /* @kind spacing */
+--space-11:22px; /* @kind spacing */
+--space-12:24px; /* @kind spacing */
+--space-13:26px; /* @kind spacing */
+--space-14:28px; /* @kind spacing */
+--space-15:30px; /* @kind spacing */
+--space-16:32px; /* @kind spacing */
+--space-18:36px; /* @kind spacing */
+--space-20:40px; /* @kind spacing */
+--space-22:44px; /* @kind spacing */
+--space-26:52px; /* @kind spacing */
+--space-28:56px; /* @kind spacing */
+--space-32:64px; /* @kind spacing */
+--space-40:80px; /* @kind spacing */
+/* Layout */
+--layout-max:1240px; /* @kind spacing */
+--layout-gutter:clamp(20px,4vw,40px); /* @kind spacing */
+--layout-gutter-header:clamp(18px,3.2vw,40px); /* @kind spacing */
+--header-height:clamp(76px,6vw,100px); /* @kind spacing */
+--section-y:clamp(72px,9vw,126px); /* @kind spacing */
+--section-y-band:clamp(72px,9vw,118px); /* @kind spacing */
+--section-y-tight:clamp(64px,8vw,108px); /* @kind spacing */
+--hero-y-top:clamp(84px,10vw,152px); /* @kind spacing */
+--hero-y-bottom:clamp(88px,11vw,164px); /* @kind spacing */
+--stack-lg:clamp(32px,5vw,80px); /* @kind spacing */
+--stack-md:clamp(24px,4vw,64px); /* @kind spacing */
+--stack-sm:clamp(18px,1.6vw,24px); /* @kind spacing */
+--card-pad:clamp(26px,3vw,44px); /* @kind spacing */
+--card-pad-sm:24px 22px 28px; /* @kind spacing */
+--grid-gap:clamp(16px,1.4vw,22px); /* @kind spacing */
+}

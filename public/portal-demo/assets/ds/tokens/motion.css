@@ -1,0 +1,31 @@
+:root{
+--ease-standard:ease; /* @kind other */
+--ease-emphasis:cubic-bezier(.2,.7,.3,1); /* @kind other */
+--ease-accordion:cubic-bezier(.4,0,.2,1); /* @kind other */
+--ease-travel:cubic-bezier(.65,0,.35,1); /* @kind other */
+--dur-fast:.2s; /* @kind other */
+--dur-base:.25s; /* @kind other */
+--dur-card:.3s; /* @kind other */
+--dur-toggle:.35s; /* @kind other */
+--dur-panel:.45s; /* @kind other */
+--dur-reveal:.7s; /* @kind other */
+--transition-button:background var(--dur-base) var(--ease-standard),transform var(--dur-base) var(--ease-standard),box-shadow var(--dur-base) var(--ease-standard); /* @kind other */
+--transition-card:transform var(--dur-card) var(--ease-standard),box-shadow var(--dur-card) var(--ease-standard),border-color var(--dur-card) var(--ease-standard); /* @kind other */
+--transition-field:border-color var(--dur-fast) var(--ease-standard),background var(--dur-fast) var(--ease-standard); /* @kind other */
+--transition-reveal:opacity var(--dur-reveal) var(--ease-emphasis),transform var(--dur-reveal) var(--ease-emphasis); /* @kind other */
+--lift-card:translateY(-6px); /* @kind other */
+--lift-card-sm:translateY(-5px); /* @kind other */
+--lift-button:translateY(-2px); /* @kind other */
+--lift-button-sm:translateY(-1px); /* @kind other */
+}
+@keyframes ak-travel{0%{left:0%}45%{left:50%}50%{left:50%}95%{left:100%}100%{left:100%}}
+@keyframes ak-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes ak-spin-rev{from{transform:rotate(360deg)}to{transform:rotate(0deg)}}
+@keyframes ak-breathe{0%,100%{transform:scale(1);opacity:.92}50%{transform:scale(1.045);opacity:1}}
+@keyframes ak-drift-a{0%,100%{transform:translate3d(0,0,0)}33%{transform:translate3d(4%,-3%,0)}66%{transform:translate3d(-3%,3%,0)}}
+@keyframes ak-drift-b{0%,100%{transform:translate3d(0,0,0)}40%{transform:translate3d(-5%,4%,0)}75%{transform:translate3d(3%,-2%,0)}}
+@keyframes ak-twinkle{0%,100%{opacity:.18;transform:scale(.7)}50%{opacity:.85;transform:scale(1)}}
+@keyframes ak-sheen{0%{opacity:0;transform:translateX(-30%) rotate(8deg)}45%{opacity:.55}100%{opacity:0;transform:translateX(130%) rotate(8deg)}}
+@keyframes ak-fadein{from{opacity:0}to{opacity:1}}
+@keyframes ak-pop{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){[data-anim]{animation:none!important}}

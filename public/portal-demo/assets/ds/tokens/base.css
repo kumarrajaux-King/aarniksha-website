@@ -1,0 +1,10 @@
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--surface-page);color:var(--text-primary);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--link-hover)}
+::selection{background:var(--ak-blue-500);color:#fff}
+input,select,textarea,button{font-family:inherit}
+img{max-width:100%}
+[data-track]{scrollbar-width:none}
+[data-track]::-webkit-scrollbar{height:0}

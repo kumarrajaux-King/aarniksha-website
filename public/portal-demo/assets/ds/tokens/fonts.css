@@ -1,0 +1,4 @@
+/* Aarniksha ships no local font binaries. The site loads Plus Jakarta Sans from Google Fonts
+   (app/layout.jsx: weights 400,500,600,700,800). Same source is used here. */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+:root{--font-sans:'Plus Jakarta Sans','Helvetica Neue',Helvetica,Arial,sans-serif;--font-body:var(--font-sans);--font-display:var(--font-sans)}

@@ -1,0 +1,68 @@
+:root{
+/* Weights — the brand uses 800 for every heading, 700 for card titles & buttons */
+--fw-regular:400; /* @kind font */
+--fw-medium:500; /* @kind font */
+--fw-semibold:600; /* @kind font */
+--fw-bold:700; /* @kind font */
+--fw-extrabold:800; /* @kind font */
+/* Sizes (fluid, exactly as authored on the site) */
+--text-display:clamp(42px,7.1vw,104px); /* @kind font */
+--text-h1:clamp(38px,5.6vw,78px); /* @kind font */
+--text-h2:clamp(34px,4.7vw,62px); /* @kind font */
+--text-h2-band:clamp(38px,5.4vw,72px); /* @kind font */
+--text-h2-panel:clamp(34px,3.9vw,56px); /* @kind font */
+--text-h3-lg:clamp(26px,2.8vw,38px); /* @kind font */
+--text-h3:clamp(20px,1.6vw,25px); /* @kind font */
+--text-h3-card:21px; /* @kind font */
+--text-h4:19px; /* @kind font */
+--text-lede:clamp(24px,3.1vw,45px); /* @kind font */
+--text-quote:clamp(24px,2.5vw,35px); /* @kind font */
+--text-statement:clamp(19px,1.9vw,28px); /* @kind font */
+--text-body-lg:clamp(15px,1.05vw,18.5px); /* @kind font */
+--text-body:clamp(15px,1.02vw,17.5px); /* @kind font */
+--text-body-sm:15.5px; /* @kind font */
+--text-body-xs:15px; /* @kind font */
+--text-body-2xs:14.5px; /* @kind font */
+--text-nav:16px; /* @kind font */
+--text-button:16px; /* @kind font */
+--text-button-sm:14px; /* @kind font */
+--text-button-md:15.5px; /* @kind font */
+--text-eyebrow:13px; /* @kind font */
+--text-eyebrow-sm:12.5px; /* @kind font */
+--text-eyebrow-xs:12px; /* @kind font */
+--text-eyebrow-2xs:11.5px; /* @kind font */
+--text-label:13px; /* @kind font */
+--text-meta:14px; /* @kind font */
+--text-value:17px; /* @kind font */
+/* Line heights */
+--lh-flush:.98; /* @kind font */
+--lh-tight:1; /* @kind font */
+--lh-display:1.1; /* @kind font */
+--lh-heading:1.04; /* @kind font */
+--lh-title:1.2; /* @kind font */
+--lh-snug:1.22; /* @kind font */
+--lh-lede:1.24; /* @kind font */
+--lh-copy:1.5; /* @kind font */
+--lh-body:1.62; /* @kind font */
+--lh-comfy:1.66; /* @kind font */
+--lh-relaxed:1.72; /* @kind font */
+/* Letter spacing */
+--ls-display:-.015em; /* @kind font */
+--ls-h1:-.035em; /* @kind font */
+--ls-h2:-.028em; /* @kind font */
+--ls-h3:-.02em; /* @kind font */
+--ls-quote:-.022em; /* @kind font */
+--ls-nav:-.01em; /* @kind font */
+--ls-eyebrow:.14em; /* @kind font */
+--ls-eyebrow-sm:.12em; /* @kind font */
+--ls-eyebrow-xs:.1em; /* @kind font */
+--ls-num:.08em; /* @kind font */
+/* Measures */
+--measure-hero:74ch; /* @kind font */
+--measure-lede:58ch; /* @kind font */
+--measure-body:52ch; /* @kind font */
+--measure-intro:46ch; /* @kind font */
+--measure-card:40ch; /* @kind font */
+--measure-headline:16ch; /* @kind font */
+--measure-headline-tight:13ch; /* @kind font */
+}

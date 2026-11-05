@@ -1,0 +1,13 @@
+:root{
+--radius-pill:999px; /* @kind radius */
+--radius-xl:22px; /* @kind radius */ /* panels, modal, tinted feature cards */
+--radius-lg:20px; /* @kind radius */ /* portrait cards */
+--radius-card:18px; /* @kind radius */ /* service cards */
+--radius-md:16px; /* @kind radius */ /* small cards, logo plate, alerts */
+--radius-sm:12px; /* @kind radius */ /* inputs, burger */
+--radius-xs:4px; /* @kind radius */
+--radius-circle:50%; /* @kind radius */
+--border-width:1px; /* @kind other */
+--border-width-strong:1.5px; /* @kind other */
+--border-width-icon:2px; /* @kind other */
+}
